@@ -1,0 +1,138 @@
+/* ========================================= */
+/* 1. LAYOUT Y ADAPTACIÓN (Sticky Footer) */
+/* ========================================= */
+/* Asegura que el contenedor principal (body) tome todo el alto visible (viewport) */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+ padding-top: 70px;
+    
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; /* Asegura que el cuerpo cubra toda la altura de la ventana */
+    
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; 
+
+    /* CLAVE 2: Añadir padding de compensación para que el footer absoluto no cubra el contenido */
+    /* El valor (80px) debe ser mayor que la altura del footer */
+    padding-bottom: 80px;
+}
+
+/* El contenido principal debe expandirse para empujar el footer hacia abajo */
+main {
+    width: 100%; /* Permite que el contenido principal tome el espacio restante */
+}
+
+/* El footer se adhiere a la parte inferior gracias a Flexbox */
+footer {
+position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Asegura que esté por encima de cualquier otro elemento del body */
+    z-index: 100;
+    
+    /* Reglas de Flexbox/Margen ignoradas */
+    margin-top: 0 !important;
+}
+
+
+/* ========================================= */
+/* 2. VARIABLES Y ESTILOS GLOBALES */
+/* ========================================= */
+:root {
+    --color-primary: #dc3545; /* Rojo de Bootstrap 'danger' - para Empanadas */
+    --color-secondary: #ffc107; /* Amarillo de Bootstrap 'warning' - para resalte */
+}
+
+.text-danger {
+    color: var(--color-primary) !important;
+}
+
+/* ========================================= */
+/* 3. CARRUSEL Y PROMOCIONES */
+/* ========================================= */
+.carousel-promo {
+    /* Altura en viewports grandes. Se puede ajustar en media queries si es necesario. */
+    height: 450px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    /* Estilos para simular las imágenes placeholder (opcional) */
+    background-image: linear-gradient(to bottom right, #f8d7da, #e2e3e5);
+}
+
+/* Añade una capa oscura (overlay) a las imágenes del carrusel para mejor contraste del texto */
+.carousel-promo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Oscurece la imagen un 40% */
+    z-index: 1;
+    border-radius: 0.3rem; /* Coincide con el redondeado de Bootstrap 5 */
+}
+
+.carousel-caption {
+    z-index: 2; /* Asegura que el texto esté sobre el overlay */
+}
+
+/* Efecto de sombra para el texto del carrusel (necesario en imágenes claras) */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.text-shadow-dark {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================= */
+/* 4. SECCIONES ESPECÍFICAS */
+/* ========================================= */
+
+/* Estilo para los cards de propietarios (más énfasis) */
+.card-img-top.rounded-circle {
+    object-fit: cover;
+    border: 3px solid var(--color-primary) !important;
+    transition: transform 0.3s ease;
+}
+
+.card-img-top.rounded-circle:hover {
+    transform: scale(1.05); /* Pequeño efecto al pasar el mouse */
+}
+
+/* Estilo para el marco estratégico */
+#estrategico .p-4 {
+    transition: box-shadow 0.3s ease;
+}
+
+#estrategico .p-4:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; /* Sombra más fuerte al pasar el mouse */
+}
+
+/* ========================================= */
+/* 5. RESPONSIVE (Ajustes para móviles) */
+/* ========================================= */
+
+/* En dispositivos pequeños, reducir la altura del carrusel */
+@media (max-width: 768px) {
+    .carousel-promo {
+        height: 300px; /* Menos alto en móviles */
+    }
+    .carousel-caption h5 {
+        font-size: 1.5rem; /* Título más pequeño */
+    }
+    .carousel-caption p {
+        font-size: 0.9rem; /* Párrafo más pequeño */
+    }
+}
