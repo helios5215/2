@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* CSS para desplazamiento suave */
-        html { scroll-behavior: smooth; }
-        
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Estilos necesarios para el navbar fijo y el carrusel */
-        body { padding-top: 70px; }
+        body {
+            padding-top: 70px;
+        }
+
         .carousel-promo {
             min-height: 400px;
             background-size: cover;
@@ -21,31 +27,43 @@
             align-items: center;
             justify-content: center;
         }
+
         .carousel-caption {
-            background: rgba(0, 0, 0, 0.5); 
+            background: rgba(0, 0, 0, 0.5);
             padding: 1rem;
             border-radius: 0.5rem;
         }
-        .text-shadow { text-shadow: 2px 2px 4px #000000; }
-        .text-shadow-dark { text-shadow: 1px 1px 2px #ffffff; }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .text-shadow-dark {
+            text-shadow: 1px 1px 2px #ffffff;
+        }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <i class="fas fa-hotdog me-2"></i> Empanadictos
+                <img src="media/logo-removebg-preview.png" alt="Logo Empanadictos"
+                    style="height: 80px; margin-right: 8px;">
+                Empanadictos
             </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html"><i class="fas fa-home me-1"></i> Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="index.html"><i
+                                class="fas fa-home me-1"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="estrategia.html"><i class="fas fa-chart-line me-1"></i> Estrategia</a>
@@ -56,19 +74,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#propietarios"><i class="fas fa-users me-1"></i> Propietarios</a>
                     </li>
-                    
+
                     <li class="nav-item d-none" id="navPideYa">
-                        <a class="nav-link btn btn-warning text-dark ms-lg-2 py-1" href="pedidos.html"><i class="fas fa-cookie-bite me-1"></i> ¡Pide Ya!</a>
+                        <a class="nav-link btn btn-warning text-dark ms-lg-2 py-1" href="pedidos.html"><i
+                                class="fas fa-cookie-bite me-1"></i> ¡Pide Ya!</a>
                     </li>
-                    
+
                     <li class="nav-item d-none" id="navLogout">
-                        <a class="nav-link btn btn-danger text-white ms-lg-2 py-1" href="#" onclick="simulateLogout(event)">
+                        <a class="nav-link btn btn-danger text-white ms-lg-2 py-1" href="#"
+                            onclick="simulateLogout(event)">
                             <i class="fas fa-sign-out-alt me-1"></i> Cerrar Sesión
                         </a>
                     </li>
 
                     <li class="nav-item d-none" id="navLogin">
-                        <a class="nav-link btn btn-success text-white ms-lg-2 py-1" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <a class="nav-link btn btn-success text-white ms-lg-2 py-1" href="#" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
                             <i class="fas fa-sign-in-alt me-1"></i> Iniciar Sesión
                         </a>
                     </li>
@@ -84,14 +105,19 @@
             <h2 class="text-center text-danger mb-4" id="welcomeMessage">¡Nuestras Promociones del Mes!</h2>
             <div id="empanadaCarousel" class="carousel slide shadow-lg" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#empanadaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#empanadaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#empanadaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#empanadaCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#empanadaCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#empanadaCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#empanadaCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#empanadaCarousel" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
                 </div>
                 <div class="carousel-inner rounded-3">
                     <div class="carousel-item active">
-                        <div class="d-block w-100 carousel-promo bg-primary text-white p-5" style="background-image: url('placeholder-carne.jpg');">
+                        <div class="d-block w-100 carousel-promo bg-primary text-white p-5"
+                            style="background-image: url('media/dc.jpeg');background-size:contain;background-repeat: no-repeat;background-position: center;">
                             <div class="carousel-caption d-block">
                                 <h5 class="display-5 fw-bold text-shadow">¡Doble de Carne!</h5>
                                 <p class="lead text-shadow">Lleva 12 y paga solo 10. ¡Perfecto para compartir!</p>
@@ -100,7 +126,8 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="d-block w-100 carousel-promo bg-success text-white p-5" style="background-image: url('placeholder-pollo.jpg');">
+                        <div class="d-block w-100 carousel-promo bg-success text-white p-5"
+                            style="background-image: url('media/ev.webp');background-size:contain;background-repeat: no-repeat;background-position: center;">
                             <div class="carousel-caption d-block">
                                 <h5 class="display-5 fw-bold text-shadow">Combo Vegetariano</h5>
                                 <p class="lead text-shadow">4 de Espinaca, 4 de Champiñón. 20% de descuento.</p>
@@ -109,7 +136,8 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="d-block w-100 carousel-promo bg-warning text-dark p-5" style="background-image: url('placeholder-queso.jpg');">
+                        <div class="d-block w-100 carousel-promo bg-warning text-dark p-5"
+                            style="background-image: url('media/eq.jpeg');background-size:contain;background-repeat: no-repeat;background-position: center;">
                             <div class="carousel-caption d-block text-shadow-dark">
                                 <h5 class="display-5 fw-bold">El Clásico de Queso</h5>
                                 <p class="lead">3x2 en empanadas de Queso y Jamón. ¡Fusión irresistible!</p>
@@ -118,7 +146,8 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="d-block w-100 carousel-promo bg-info text-white p-5" style="background-image: url('placeholder-dulce.jpg');">
+                        <div class="d-block w-100 carousel-promo bg-info text-white p-5"
+                            style="background-image: url('media/en.webp');background-size:contain;background-repeat: no-repeat;background-position: center;">
                             <div class="carousel-caption d-block">
                                 <h5 class="display-5 fw-bold text-shadow">Edición Especial Dulce</h5>
                                 <p class="lead text-shadow">¡Empanadas de Nutella! Solo por esta semana.</p>
@@ -127,11 +156,13 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#empanadaCarousel" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#empanadaCarousel"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#empanadaCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#empanadaCarousel"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -145,25 +176,31 @@
             <div class="row justify-content-center g-4">
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm text-center border-0">
-                        <img src="placeholder-propietario1.jpg" class="card-img-top mx-auto mt-3 rounded-circle border border-danger border-3" alt="Propietario 1" style="width: 150px; height: 150px; object-fit: cover;">
+                        <img src="placeholder-propietario1.jpg"
+                            class="card-img-top mx-auto mt-3 rounded-circle border border-danger border-3"
+                            alt="Propietario 1" style="width: 150px; height: 150px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold text-danger">Ana García</h5>
-                            <p class="card-text text-muted">La maestra panadera y creadora de las recetas secretas. Su pasión es la masa perfecta y el relleno inolvidable.</p>
+                            <h5 class="card-title fw-bold text-danger">MAMANI MAMANI JHONATTAN ALEXANDER</h5>
+                            <p class="card-text text-muted">La maestra panadera y creadora de las recetas secretas. Su
+                                pasión es la masa perfecta y el relleno inolvidable.</p>
                         </div>
                         <div class="card-footer bg-white border-0">
-                             <small class="text-muted"><i class="fas fa-star text-warning me-1"></i> Fundadora y Chef Principal</small>
+                            <small class="text-muted"><i class="fas fa-star text-warning me-1"></i> Fundador</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm text-center border-0">
-                         <img src="placeholder-propietario2.jpg" class="card-img-top mx-auto mt-3 rounded-circle border border-danger border-3" alt="Propietario 2" style="width: 150px; height: 150px; object-fit: cover;">
+                        <img src="placeholder-imagen no encontrada.jpg"
+                            class="card-img-top mx-auto mt-3 rounded-circle border border-danger border-3"
+                            alt="Imagen no encontrada " style="width: 150px; height: 150px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold text-danger">Luis Fernández</h5>
-                            <p class="card-text text-muted">El genio detrás de la logística y la atención al cliente. Se asegura de que cada pedido llegue caliente y a tiempo.</p>
+                            <h5 class="card-title fw-bold text-danger">APAZA MERCADO LEONARDO</h5>
+                            <p class="card-text text-muted">El genio detrás de la logística y la atención al cliente. Se
+                                asegura de que cada pedido llegue caliente y a tiempo.</p>
                         </div>
                         <div class="card-footer bg-white border-0">
-                             <small class="text-muted"><i class="fas fa-star text-warning me-1"></i> Gerente de Operaciones</small>
+                            <small class="text-muted"><i class="fas fa-star text-warning me-1"></i>Fundador</small>
                         </div>
                     </div>
                 </div>
@@ -173,30 +210,41 @@
         <hr>
 
         <section id="estrategico" class="py-5 bg-light rounded-3">
-            <a href="estrategia.html" class="text-decoration-none"><h2 class="text-center text-danger mb-5">Marco Estratégico</h2></a>
+            <a href="estrategia.html" class="text-decoration-none">
+                <h2 class="text-center text-danger mb-5">Marco Estratégico</h2>
+            </a>
             <div class="row justify-content-center text-center g-4">
                 <div class="col-md-4">
                     <div class="p-4 border-start border-3 border-danger h-100 bg-white shadow-sm">
                         <i class="fas fa-bullseye fa-3x text-danger mb-3"></i>
                         <h3 class="text-danger">Misión</h3>
-                        <p class="text-muted">Ofrecer las empanadas más deliciosas y variadas, elaboradas con ingredientes frescos y de alta calidad, garantizando una experiencia de sabor única y un servicio excepcional a todos nuestros clientes.</p>
+                        <p class="text-muted">Ofrecer empanadas de calidad, con sabores innovadores y precios
+                            accesibles, utilizando ingredientes frescos y locales, para poder ofrecer un servicio
+                            excepcional a nuestros clientes y haciendo que se aventuren en un mar de sabores y
+                            experiencias únicas con nuestras empanadas.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                     <div class="p-4 border-start border-3 border-warning h-100 bg-white shadow-sm">
+                    <div class="p-4 border-start border-3 border-warning h-100 bg-white shadow-sm">
                         <i class="fas fa-eye fa-3x text-warning mb-3"></i>
                         <h3 class="text-warning">Visión</h3>
-                        <p class="text-muted">Ser la cadena de empanadas líder y de mayor reconocimiento a nivel nacional, expandiendo nuestra pasión por la gastronomía local a nuevas ciudades y siendo sinónimo de tradición e innovación.</p>
+                        <p class="text-muted">Ser la marca líder y referente en el mercado de las empanadas, reconocida
+                            por nuestra constante innovación, sabor y atención al cliente.Buscando expandir nuestro
+                            sabor como nuestro alcance al cliente a nuevos horizontes.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                     <div class="p-4 border-start border-3 border-success h-100 bg-white shadow-sm">
+                    <div class="p-4 border-start border-3 border-success h-100 bg-white shadow-sm">
                         <i class="fas fa-hands-helping fa-3x text-success mb-3"></i>
                         <h3 class="text-success">Valores</h3>
                         <ul class="list-unstyled text-muted text-start">
-                            <li><i class="fas fa-check-circle me-2 text-success"></i> **Calidad:** Compromiso con los mejores ingredientes.</li>
-                            <li><i class="fas fa-check-circle me-2 text-success"></i> **Pasión:** Amor por lo que hacemos.</li>
-                            <li><i class="fas fa-check-circle me-2 text-success"></i> **Innovación:** Creando nuevos sabores.</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Ofrecer una mejor calidad a
+                                nuestros clientes</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Innovar en nuestra variedad de
+                                empanadas</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Tener una mejor sostenibilidad</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Enfocarnos netamente en nuestros
+                                clientes para ofrecerles un producto de alta calidad</li>
                         </ul>
                     </div>
                 </div>
@@ -205,25 +253,32 @@
 
     </main>
 
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"
+        data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-danger text-white">
                     <h5 class="modal-title" id="loginModalLabel">Acceder a tu Cuenta</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" id="closeModalButton"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                        id="closeModalButton"></button>
                 </div>
                 <div class="modal-body p-4">
                     <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true">Iniciar Sesión</button>
+                            <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login"
+                                aria-selected="true">Iniciar Sesión</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register" aria-selected="false">Registrarse</button>
+                            <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                                aria-selected="false">Registrarse</button>
                         </li>
                     </ul>
 
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                            aria-labelledby="pills-login-tab">
                             <form id="loginForm">
                                 <div class="mb-3">
                                     <label for="loginName" class="form-label">Nombre de Usuario/Correo</label>
@@ -232,7 +287,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="loginPassword" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="loginPassword" name="loginPassword" required>
+                                    <input type="password" class="form-control" id="loginPassword" name="loginPassword"
+                                        required>
                                     <div class="invalid-feedback">La contraseña es obligatoria.</div>
                                 </div>
                                 <button type="submit" class="btn btn-danger w-100 mb-3 fw-bold">
@@ -241,23 +297,28 @@
                             </form>
                         </div>
 
-                        <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
+                        <div class="tab-pane fade" id="pills-register" role="tabpanel"
+                            aria-labelledby="pills-register-tab">
                             <form id="registerForm">
                                 <div class="mb-3">
                                     <label for="registerName" class="form-label">Nombre Completo</label>
-                                    <input type="text" class="form-control" id="registerName" name="registerName" required>
+                                    <input type="text" class="form-control" id="registerName" name="registerName"
+                                        required>
                                     <div class="invalid-feedback">El nombre completo es obligatorio.</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="registerEmail" class="form-label">Correo Electrónico</label>
-                                    <input type="email" class="form-control" id="registerEmail" name="registerEmail" required>
+                                    <input type="email" class="form-control" id="registerEmail" name="registerEmail"
+                                        required>
                                     <div class="invalid-feedback">El correo es obligatorio y debe ser válido.</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="registerPassword" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="registerPassword" name="registerPassword" minlength="8" required>
+                                    <input type="password" class="form-control" id="registerPassword"
+                                        name="registerPassword" minlength="8" required>
                                     <div class="form-text">Mínimo 8 caracteres para mayor seguridad.</div>
-                                    <div class="invalid-feedback">La contraseña es obligatoria y debe tener al menos 8 caracteres.</div>
+                                    <div class="invalid-feedback">La contraseña es obligatoria y debe tener al menos 8
+                                        caracteres.</div>
                                 </div>
                                 <button type="submit" class="btn btn-success w-100 mb-3 fw-bold">
                                     <i class="fas fa-user-plus me-1"></i> Registrar Cuenta
@@ -270,9 +331,9 @@
         </div>
     </div>
 
-    <footer class="bg-dark text-white text-center py-2 mt-5"> 
+    <footer class="bg-dark text-white text-center py-2 mt-5">
         <div class="container">
-            <p class="mb-0">© 2024 Empanadictos. Todos los derechos reservados.</p>
+            <p class="mb-0">© 2025 Empanadictos. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -280,20 +341,20 @@
 
     <script>
         // 1. GESTIÓN DE LA MEMORIA LOCAL (USUARIOS Y ESTADO)
-        
+
         // Cargar usuarios existentes o inicializar lista vacía
         let registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
-        
+
         // Determinar el siguiente ID consecutivo
-        let nextUserId = registeredUsers.length > 0 
-            ? registeredUsers[registeredUsers.length - 1].id + 1 
+        let nextUserId = registeredUsers.length > 0
+            ? registeredUsers[registeredUsers.length - 1].id + 1
             : 1;
 
         const MOCK_USER = {
             isLoggedIn: localStorage.getItem('isLoggedIn') === 'true',
             username: localStorage.getItem('username') || "Cliente"
         };
-        
+
         const mainContent = document.getElementById('mainContent');
         const loginModalElement = document.getElementById('loginModal');
         const loginModal = new bootstrap.Modal(loginModalElement);
@@ -304,7 +365,7 @@
         const closeModalButton = document.getElementById('closeModalButton');
 
         // --- Funciones de Estado ---
-        
+
         function updateUI() {
             if (MOCK_USER.isLoggedIn) {
                 // Usuario logueado: Ocultar login, mostrar contenido y botones de acción
@@ -313,7 +374,7 @@
                 navLogout.classList.remove('d-none');
                 navPideYa.classList.remove('d-none');
                 welcomeMessage.innerHTML = `<i class="fas fa-cookie-bite me-2"></i> ¡Bienvenido, ${MOCK_USER.username}!`;
-                closeModalButton.classList.remove('d-none'); 
+                closeModalButton.classList.remove('d-none');
             } else {
                 // Usuario no logueado: Mostrar login, ocultar contenido
                 mainContent.classList.add('d-none');
@@ -321,14 +382,14 @@
                 navLogout.classList.add('d-none');
                 navPideYa.classList.add('d-none');
                 welcomeMessage.innerHTML = `¡Nuestras Promociones del Mes!`;
-                closeModalButton.classList.add('d-none'); 
+                closeModalButton.classList.add('d-none');
                 loginModal.show();
             }
         }
 
         function simulateLogin(username) {
             MOCK_USER.isLoggedIn = true;
-            MOCK_USER.username = username; 
+            MOCK_USER.username = username;
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('username', username);
             loginModal.hide();
@@ -336,8 +397,8 @@
             updateUI();
         }
 
-        window.simulateLogout = function(event) {
-            event.preventDefault(); 
+        window.simulateLogout = function (event) {
+            event.preventDefault();
             MOCK_USER.isLoggedIn = false;
             MOCK_USER.username = "Cliente";
             localStorage.removeItem('isLoggedIn');
@@ -349,16 +410,16 @@
         // --- Manejo de Formularios ---
 
         // Función para Iniciar Sesión (simulada)
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const loginInput = document.getElementById('loginName').value;
             // Usamos la primera palabra como nombre
             const username = loginInput.split(' ')[0].split('@')[0];
-            simulateLogin(username); 
+            simulateLogin(username);
         });
 
         // Función para Registrarse (con almacenamiento local y ID secuencial)
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const registerName = document.getElementById('registerName').value;
             const registerEmail = document.getElementById('registerEmail').value;
@@ -382,15 +443,16 @@
 
             // 3. Simular inicio de sesión
             alert(`Registro #${newUser.id} exitoso para ${newUser.name.split(' ')[0]}. Iniciando sesión automáticamente.`);
-            simulateLogin(newUser.name.split(' ')[0]); 
+            simulateLogin(newUser.name.split(' ')[0]);
         });
 
         // --- Inicialización ---
 
-        window.onload = function() {
+        window.onload = function () {
             updateUI();
         };
 
     </script>
 </body>
+
 </html>
